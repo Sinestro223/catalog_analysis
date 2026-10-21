@@ -80,3 +80,9 @@ movies = [
         "actors": ["P. Diaz", "T. Chalamet"]
     },
 ]
+
+
+def average_rating(movies):
+    rating_sum = sum(mov['rating'] for mov in movies)
+    total_n = len(movies)
+    return round(rating_sum / total_n, ndigits=1)
