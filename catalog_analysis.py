@@ -178,14 +178,6 @@ def format_report_line(movie):
     return output
 
 
-def count_by_genre(movies):
-    counter = dict()
-    for mov in movies:
-        for genre in mov['genres']:
-            counter[genre] = counter.get(genre, 0) + 1
-    return counter
-
-
 def titles_sorted_by_rating(movies):
     temp_sorted_movies = sorted(
         movies, 
@@ -197,3 +189,11 @@ def titles_sorted_by_rating(movies):
 def top_n_by_rating(movies, n=3):
     temp_sorted_movies = sorted(movies, key=lambda mov: -mov['rating'])
     return [(mov['title'], mov['rating']) for mov in temp_sorted_movies[:n]]
+
+
+def count_by_genre(movies):
+    counter = dict()
+    for mov in movies:
+        for genre in mov['genres']:
+            counter[genre] = counter.get(genre, 0) + 1
+    return counter
