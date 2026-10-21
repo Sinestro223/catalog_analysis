@@ -197,3 +197,12 @@ def count_by_genre(movies):
         for genre in mov['genres']:
             counter[genre] = counter.get(genre, 0) + 1
     return counter
+
+
+def actor_filmography(movies):
+    counter = dict()
+
+    for mov in movies:
+        for actor in mov['actors']:
+            counter[actor] = counter.get(actor, []) + [mov['title']]
+    return counter
