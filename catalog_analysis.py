@@ -226,3 +226,9 @@ def all_genres(movies):
 
 def common_actors(movie1, movie2):
     return set(movie1['actors']) & set(movie2['actors'])
+
+
+def genres_only_in_one(movies_a, movies_b):
+    movies_a_genres = all_genres(movies_a)
+    movies_b_genres = all_genres(movies_b)
+    return movies_a_genres - movies_b_genres
