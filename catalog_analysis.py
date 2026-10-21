@@ -128,3 +128,10 @@ def decade_label(year):
             return "недавние"
         case _:
             return "старые"
+
+
+def filter_non_comedy_movies(movies):
+    for mov in movies:
+        if 'comedy' in mov['genres']:
+            continue
+        print(mov['title'])
