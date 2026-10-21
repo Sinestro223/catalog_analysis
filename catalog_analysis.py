@@ -265,14 +265,14 @@ def build_report(movies):
     print(f'Средний рейтинг: {mean_rating}')
     print(f'Средний возраст фильмов: {mean_age} лет')
     print()
-
+    print('Топ-3 фильма:')
     for mov in top_movies:
         print(f'  {format_report_line(mov)}')
-
+    print()
     print('Фильмов по жанрам:')
     for genre, k in genre_list:
         print(f'  {genre} — {k}')
-
+    print()
     print(f'Все жанры каталога: {", ".join(genre_set)}')
 
 
