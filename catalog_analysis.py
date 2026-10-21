@@ -206,3 +206,12 @@ def actor_filmography(movies):
         for actor in mov['actors']:
             counter[actor] = counter.get(actor, []) + [mov['title']]
     return counter
+
+
+def list_good_films(movies):
+    mean_rating = average_rating(movies)
+    return {
+        mov['title']: mov['rating'] 
+        for mov in movies 
+        if mov['rating'] > mean_rating
+    }
