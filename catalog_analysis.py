@@ -184,3 +184,8 @@ def count_by_genre(movies):
         for genre in mov['genres']:
             counter[genre] = counter.get(genre, 0) + 1
     return counter
+
+
+def titles_sorted_by_rating(movies):
+    temp_sorted_movies = sorted(movies, key=lambda mov: -mov['rating'])
+    return [mov['title'] for mov in temp_sorted_movies]
