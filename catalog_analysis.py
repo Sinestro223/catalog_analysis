@@ -274,3 +274,7 @@ def build_report(movies):
         print(f'  {genre} — {k}')
 
     print(f'Все жанры каталога: {", ".join(genre_set)}')
+
+
+if __name__ == '__main__':
+    build_report(movies)
