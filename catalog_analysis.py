@@ -242,3 +242,35 @@ def iter_high_rated(movies, min_rating=8.0):
 
 def high_rated_total_length(movies):
     return sum(mov["duration_min"] for mov in movies if mov["rating"] > 7)
+
+
+def build_report(movies):
+    mean_rating = average_rating(movies)
+    _, _, mean_age = catalog_age_stats(movies)
+
+    top_movies = sorted(
+        movies,
+        key=lambda mov: mov['rating'],
+        reverse=True,
+    )[:3]
+
+    genre_counter = count_by_genre(movies)
+    genre_list = [(k, v) for k, v in genre_counter.items()]
+    genre_list = sorted(genre_list, key=lambda pair: pair[1], reverse=True)
+
+    genre_set = all_genres(movies)
+    genre_set = sorted(genre_set)
+
+    print('ОТЧеТ ПО КАТАЛОГУ')
+    print(f'Средний рейтинг: {mean_rating}')
+    print(f'Средний возраст фильмов: {mean_age} лет')
+    print()
+
+    for mov in top_movies:
+        print(f'  {format_report_line(mov)}')
+
+    print('Фильмов по жанрам:')
+    for genre, k in genre_list:
+        print(f'  {genre} — {k}')
+
+    print(f'Все жанры каталога: {", ".join(genre_set)}')
