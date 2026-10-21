@@ -142,7 +142,7 @@ def search_first_masterpiece(movies):
     idx = 0
     while idx < len(movies):
         mov = movies[idx]
-        if rating_tier(mov['rating']) == 'шедевр':
+        if mov['rating'] > 9.0:
             masterpiece_mov = mov['title']
             break
         idx += 1
