@@ -176,3 +176,11 @@ def format_report_line(movie):
     f'{duration_in_hours(movie['duration_min'])}, '
     f'жанры: {", ".join(sorted(movie['genres']))}')
     return output
+
+
+def count_by_genre(movies):
+    counter = dict()
+    for mov in movies:
+        for genre in mov['genres']:
+            counter[genre] = counter.get(genre, 0) + 1
+    return counter
