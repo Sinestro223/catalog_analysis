@@ -157,3 +157,9 @@ def count_long_movies(movies, threshold=120):
         if mov['duration_min'] > threshold:
             lm_counter += 1
     return lm_counter
+
+
+def normalize_title(title):
+    words = title.split()
+    words = [word[0].upper() + word[1:] for word in words]
+    return " ".join(words)
