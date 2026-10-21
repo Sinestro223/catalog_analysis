@@ -222,3 +222,7 @@ def all_genres(movies):
     for mov in movies:
         genres.update(mov['genres'])
     return genres
+
+
+def common_actors(movie1, movie2):
+    return set(movie1['actors']) & set(movie2['actors'])
