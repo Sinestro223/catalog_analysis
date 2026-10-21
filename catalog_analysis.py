@@ -232,3 +232,9 @@ def genres_only_in_one(movies_a, movies_b):
     movies_a_genres = all_genres(movies_a)
     movies_b_genres = all_genres(movies_b)
     return movies_a_genres - movies_b_genres
+
+
+def iter_high_rated(movies, min_rating=8.0):
+    for mov in movies:
+        if mov['rating'] >= min_rating:
+            yield mov
