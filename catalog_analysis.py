@@ -118,3 +118,13 @@ def rating_tier(rating):
         return "хорошо"
     else:
         return "средне" if 5 <= rating < 7 else "слабо"
+
+
+def decade_label(year):
+    match year:
+        case year if year >= 2020:
+            return "новые"
+        case year if 2015 <= year < 2020:
+            return "недавние"
+        case _:
+            return "старые"
