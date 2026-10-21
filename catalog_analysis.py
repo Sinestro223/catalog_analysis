@@ -135,3 +135,17 @@ def filter_non_comedy_movies(movies):
         if 'comedy' in mov['genres']:
             continue
         print(mov['title'])
+
+
+def search_first_masterpiece(movies):
+    masterpiece_mov = None
+    idx = 0
+    while idx < len(movies):
+        mov = movies[idx]
+        if rating_tier(mov['rating']) == 'шедевр':
+            masterpiece_mov = mov['title']
+            break
+        idx += 1
+    else:
+        return "Шедевров не найдено"
+    return masterpiece_mov
