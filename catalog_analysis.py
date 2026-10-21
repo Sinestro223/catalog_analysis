@@ -82,7 +82,25 @@ movies = [
 ]
 
 
+import math
+
+
 def average_rating(movies):
     rating_sum = sum(mov['rating'] for mov in movies)
     total_n = len(movies)
     return round(rating_sum / total_n, ndigits=1)
+
+
+def catalog_age_stats(movies, current_year=2026):
+    old_movie = max(movies, key=lambda mov: current_year - mov['year'])
+    new_movie = min(movies, key=lambda mov: current_year - mov['year'])
+
+    old_movie = old_movie['year']
+    new_movie = new_movie['year']
+
+    year_sum = sum(mov['year'] for mov in movies)
+    total_n = len(movies)
+
+    mean_year = math.ceil(year_sum / total_n)
+
+    return (old_movie, new_movie, mean_year)
