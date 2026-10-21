@@ -1,3 +1,5 @@
+import math
+
 movies = [
     {
         "title": "The Dune Chronicles", 
@@ -80,9 +82,6 @@ movies = [
         "actors": ["P. Diaz", "T. Chalamet"]
     },
 ]
-
-
-import math
 
 
 def average_rating(movies):
