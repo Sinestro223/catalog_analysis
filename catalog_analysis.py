@@ -163,3 +163,8 @@ def normalize_title(title):
     words = title.split()
     words = [word[0].upper() + word[1:] for word in words]
     return " ".join(words)
+
+
+def make_slug(title):
+    norm_title = title.lower().replace(' ', '-')
+    return norm_title
