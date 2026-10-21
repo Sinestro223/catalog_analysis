@@ -94,10 +94,10 @@ def catalog_age_stats(movies, current_year=2026):
     old_movie = max(movies, key=lambda mov: current_year - mov['year'])
     new_movie = min(movies, key=lambda mov: current_year - mov['year'])
 
-    old_movie = old_movie['year']
-    new_movie = new_movie['year']
+    old_movie = current_year - old_movie['year']
+    new_movie = current_year - new_movie['year']
 
-    year_sum = sum(mov['year'] for mov in movies)
+    year_sum = sum(current_year - mov['year'] for mov in movies)
     total_n = len(movies)
 
     mean_year = math.ceil(year_sum / total_n)
