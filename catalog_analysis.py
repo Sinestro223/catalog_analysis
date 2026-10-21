@@ -168,3 +168,11 @@ def normalize_title(title):
 def make_slug(title):
     norm_title = title.lower().replace(' ', '-')
     return norm_title
+
+
+def format_report_line(movie):
+    output = (f'"{normalize_title(movie["title"])}" '
+    f'({movie["year"]}) - {movie["rating"]}/10, '
+    f'{duration_in_hours(movie['duration_min'])}, '
+    f'жанры: {", ".join(movie['genres'])}')
+    return output
