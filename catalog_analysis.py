@@ -104,3 +104,9 @@ def catalog_age_stats(movies, current_year=2026):
     mean_year = math.ceil(year_sum / total_n)
 
     return (old_movie, new_movie, mean_year)
+
+
+def duration_in_hours(minutes):
+    hours = minutes // 60
+    remain_minutes = minutes % 60
+    return f"{hours}ч {remain_minutes}м"
