@@ -149,3 +149,11 @@ def search_first_masterpiece(movies):
     else:
         return "Шедевров не найдено"
     return masterpiece_mov
+
+
+def count_long_movies(movies, threshold=120):
+    lm_counter = 0
+    for mov in movies:
+        if mov['duration_min'] > threshold:
+            lm_counter += 1
+    return lm_counter
