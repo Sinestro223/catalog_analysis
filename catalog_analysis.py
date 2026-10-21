@@ -277,4 +277,9 @@ def build_report(movies):
 
 
 if __name__ == '__main__':
+    for movie in iter_high_rated(movies):
+        print(format_report_line(movie))
+    print('='*30)
+    print('='*30)
+    print()
     build_report(movies)
