@@ -238,3 +238,7 @@ def iter_high_rated(movies, min_rating=8.0):
     for mov in movies:
         if mov['rating'] >= min_rating:
             yield mov
+
+
+def high_rated_total_length(movies):
+    return sum(mov["duration_min"] for mov in movies if mov["rating"] > 7)
