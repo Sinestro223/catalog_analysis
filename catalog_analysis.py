@@ -215,3 +215,10 @@ def list_good_films(movies):
         for mov in movies 
         if mov['rating'] > mean_rating
     }
+
+
+def all_genres(movies):
+    genres = set()
+    for mov in movies:
+        genres.update(mov['genres'])
+    return genres
