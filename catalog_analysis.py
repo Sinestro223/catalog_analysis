@@ -122,9 +122,9 @@ def rating_tier(rating):
 
 def decade_label(year):
     match year:
-        case year if year >= 2020:
+        case _ if year > 2020:
             return "новые"
-        case year if 2015 <= year < 2020:
+        case _ if 2015 <= year <= 2020:
             return "недавние"
         case _:
             return "старые"
