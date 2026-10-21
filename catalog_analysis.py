@@ -109,3 +109,12 @@ def duration_in_hours(minutes):
     hours = minutes // 60
     remain_minutes = minutes % 60
     return f"{hours}ч {remain_minutes}м"
+
+
+def rating_tier(rating):
+    if rating >= 9:
+        return "шедевр"
+    elif 7 <= rating < 9:
+        return "хорошо"
+    else:
+        return "средне" if 5 <= rating < 7 else "слабо"
